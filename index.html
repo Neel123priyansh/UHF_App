@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link href="/src/style.css" rel="stylesheet">
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="manifest" href="./public/manifest.webmanifest" />
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/sw.js')  // ✅ no /public
+        .then(reg => console.log('SW registered:', reg.scope))
+        .catch(err => console.error('SW failed:', err));
+    });
+  }
+</script>
     <meta name="theme-color" content="#0ea5a4" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
