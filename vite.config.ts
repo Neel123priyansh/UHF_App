@@ -7,14 +7,13 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(), tailwindcss(), VitePWA({
     registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png'],
+      includeAssets: ['robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'My React PWA',
-        short_name: 'MyPWA',
+        short_name: 'Student Verification',
         description: 'A sample React PWA',
         start_url: '/',
         display: 'standalone',
-        background_color: '#ffffff',
         theme_color: '#0f172a',
         icons: [
           { src: '/public/assets/icons/Logo_192.png', sizes: '192x192', type: 'image/png' },
