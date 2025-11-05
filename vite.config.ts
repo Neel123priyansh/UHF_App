@@ -17,11 +17,14 @@ export default defineConfig({
         background_color: '#ffffff',
         theme_color: '#0f172a',
         icons: [
-          { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
-          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+          { src: '/public/assets/icons/Logo_192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/public/assets/icons/Logo_512.png', sizes: '512x512', type: 'image/png' },
           // For iOS maskable
-          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable any' }
+          { src: '/public/assets/icons/Logo_512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable any' }
         ]
-      }
+      },
+      workbox: {
+        maximumFileSizeToCacheInBytes: 6 * 1024 * 1024, // ✅ increase to 6 MiB
+      },
   })],
 })
