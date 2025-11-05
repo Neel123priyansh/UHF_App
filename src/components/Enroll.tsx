@@ -13,7 +13,7 @@ export default function Enroll({ apiBase }: EnrollProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [status, setStatus] = useState<string>('Loading models...')
   const [loadingModels, setLoadingModels] = useState<boolean>(true)
-  const [framesCaptured, setFramesCaptured] = useState<number>(0)
+  const [, setFramesCaptured] = useState<number>(0)
   const [progressPct, setProgressPct] = useState<number>(0)
 
   // form state
@@ -63,23 +63,22 @@ export default function Enroll({ apiBase }: EnrollProps) {
   }
 
   // simple crop (keeps for preview or future use) — not used for descriptor with face-api because .withFaceDescriptor() already handles alignment internally
-  function alignCropToCanvas(videoEl: HTMLVideoElement, detection: any) {
-    const box = detection.detection.box
-    const canvas = document.createElement('canvas')
-    const size = 160
-    canvas.width = size
-    canvas.height = size
-    const ctx = canvas.getContext('2d')!
-    const sx = Math.max(0, box.x - box.width * 0.2)
-    const sy = Math.max(0, box.y - box.height * 0.35)
-    const sw = Math.min(videoEl.videoWidth - sx, box.width * 1.4)
-    const sh = Math.min(videoEl.videoHeight - sy, box.height * 1.6)
-    ctx.drawImage(videoEl, sx, sy, sw, sh, 0, 0, size, size)
-    return canvas
-  }
+  // function alignCropToCanvas(videoEl: HTMLVideoElement, detection: any) {
+  //   const box = detection.detection.box
+  //   const canvas = document.createElement('canvas')
+  //   const size = 160
+  //   canvas.width = size
+  //   canvas.height = size
+  //   const ctx = canvas.getContext('2d')!
+  //   const sx = Math.max(0, box.x - box.width * 0.2)
+  //   const sy = Math.max(0, box.y - box.height * 0.35)
+  //   const sw = Math.min(videoEl.videoWidth - sx, box.width * 1.4)
+  //   const sh = Math.min(videoEl.videoHeight - sy, box.height * 1.6)
+  //   ctx.drawImage(videoEl, sx, sy, sw, sh, 0, 0, size, size)
+  //   return canvas
+  // }
 
   async function captureAndEnroll() {
-    // ensure models loaded
     if (loadingModels) { setStatus('Models still loading'); return }
     if (!studentId || !name ) { setStatus('Fill student details'); return }
 
