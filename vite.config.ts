@@ -16,10 +16,10 @@ export default defineConfig({
         background_color: '#ffffff',
         theme_color: '#0f172a',
         icons: [
-          { src: '/public/assets/icons/Logo_192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/public/assets/icons/Logo_512.png', sizes: '512x512', type: 'image/png' },
+          { src: '/assets/icons/Logo_192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/assets/icons/Logo_512.png', sizes: '512x512', type: 'image/png' },
           // For iOS maskable
-          { src: '/public/assets/icons/Logo_512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable any' }
+          { src: '/assets/icons/Logo_512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable any' }
         ]
       },
       workbox: {
