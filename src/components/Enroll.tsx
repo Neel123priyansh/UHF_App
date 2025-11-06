@@ -147,7 +147,6 @@ export default function Enroll({ apiBase }: EnrollProps) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-8 px-4">
   <div className="w-full max-w-5xl bg-white rounded-2xl p-6 flex flex-wrap gap-6 items-start justify-center">
-    {/* Camera Preview */}
     <div className="flex-1 min-w-[320px]">
       <video
         ref={videoRef}
