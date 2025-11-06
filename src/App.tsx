@@ -3,7 +3,7 @@ import Enroll from './components/Enroll'
 
 export default function App() {
   // 🔧 Directly define your backend API base here
-  const apiBase = 'https://cove-coordinate-alabama-reprints.trycloudflare.com/';
+  const apiBase = 'https://mystery-expensive-hour-assembly.trycloudflare.com/';
 
   return (
     <div className="min-h-screen text-gray-900 p-8">
